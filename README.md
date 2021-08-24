@@ -15,4 +15,4 @@ Návod ke spuštění projektu:
 
 Něco o projektu: 
 Projekt jako takový složitý není, zabral mi asi něco málo přes dvě hodiny.
-Problém mi na druhou stranu dělal docker a zprovoznění projektu.
+Problém mi na druhou stranu dělal docker a zprovoznění projektu, to mi zabralo o dost více času.
