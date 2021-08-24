@@ -12,7 +12,10 @@ Návod ke spuštění projektu:
 7) v něm poté php bin/console doctrine:database:create pokud databáze již existuje je to v pořádku
 8) dále: php bin/console doctrine:schema:update --force
 9) a naposledy: php bin/console doctrine:fixtures:load
+10) nyní po zadání adresy do prohlížeče localhost:8080 nebo localhost:80 se aplikace spustí
 
 Něco o projektu: 
 Projekt jako takový složitý není, zabral mi asi něco málo přes dvě hodiny.
 Problém mi na druhou stranu dělal docker a zprovoznění projektu, to mi zabralo o dost více času.
+
+Hodně jsem používal make (konkrétně: make:auth, make:form, make:user, make:controller)
