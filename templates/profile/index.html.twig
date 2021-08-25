@@ -1,0 +1,28 @@
+{# templates/list/index.html.twig #} {% extends 'base.html.twig' %} {% block
+    body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card bg-light mb-3 mt-3">
+                    {% if app.user != null %}
+                    {% if is_granted('ROLE_ADMIN') %}
+                    Teď si admin
+                    {% else %}
+                        TOHLE VIDÍŠ PROTOŽE NEJSI ADMIN PŘIHLAŠ SE admin@admin.cz s heslem admin a koukej
+                    {% endif %}
+                    <div class="card-body">
+                            <div class="card-header">Email: {{ email }}</div>
+                        Ahoj {{ name }}
+
+                    </div>
+                    {% else %}
+                </div>
+                    <a href="{{ path('app_login') }}" class="btn btn-info">
+                        Přihlaš se abys viděl profil >></a
+                    >
+
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
