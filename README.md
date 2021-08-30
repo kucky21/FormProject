@@ -15,8 +15,14 @@ Návod ke spuštění projektu:
 10) a naposledy: php bin/console doctrine:fixtures:load
 11) nyní po zadání adresy do prohlížeče localhost:8080 nebo localhost:80 se aplikace spustí
 
-Něco o projektu: 
-Projekt jako takový složitý není, zabral mi asi něco málo přes dvě hodiny.
-Problém mi na druhou stranu dělal docker a zprovoznění projektu, to mi zabralo o dost více času.
+##Endpoint: 
+/register -> má form-input data se dají nahrát pouze přes nástroje pro práci s api (POSTMAN, firecamp).. 
+parameters: 
+  - name
+  - password
+  - email
+curl pro přidání uživatele: curl -X POST -F 'name=jmeno' -F 'password=something' -F 'email=luk.greg@seznam.cz' http://localhost:8080/register
 
-Hodně jsem používal make (konkrétně: make:auth, make:form, make:user, make:controller)
+Něco o projektu: 
+Problém mi dělal docker a zprovoznění projektu, to mi zabralo více času.
+V projektu je registrace jak přes API tak přes formulář.
