@@ -22,3 +22,5 @@ security:
             guard:
                 authenticators:
                     - App\Security\LoginFormAuthenticator
+    access_control:
+        - {path: '^/profile', roles: [ROLE_USER, ROLE_ADMIN]}

@@ -15,6 +15,14 @@
                         Ahoj {{ name }}
 
                     </div>
+                    Uživatelé:
+                    {% for user in users%}
+                        {{ user.id }}<br>
+                        {{ user.name }}<br>
+                        {{ user.email }}<br>
+                        {% else %}
+                        Žádné záznamy
+                    {% endfor %}
                     {% else %}
                 </div>
                     <a href="{{ path('app_login') }}" class="btn btn-info">

@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 
+use App\Entity\User;
 use Symfony\Component\Security\Core\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -26,14 +27,20 @@ class ProfileController extends AbstractController
      */
     public function index(): Response
     {
+
         $user = $this->security->getUser();
-        if(!empty($user)){
+
+            $repository = $this->getDoctrine()->getRepository(User::class);
+            $users = $repository->findAll();
+
+        if($user !== null){
             $userName = $user->getName();
             $userEmail = $user->getEmail();
         }
         return $this->render('profile/index.html.twig', [
             'name' => $userName,
             'email' => $userEmail,
+            'users' => $users
         ]);
     }
 }

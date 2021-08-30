@@ -19,11 +19,16 @@ class LoginController extends AbstractController
         // }
 
         // get the login error if there is one
+        $message = "";
         $error = $authenticationUtils->getLastAuthenticationError();
-        // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
+        if($error){
+            $message = "Špatné přihlašovací údaje";
+            return $this->render('security/login.html.twig', ['last_username' => $lastUsername, 'message' => $message]);
+        }
+        // last username entered by the user
 
-        return $this->render('security/login.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
+        return $this->render('security/login.html.twig', ['last_username' => $lastUsername, 'message' => $message]);
     }
 
     /**

@@ -1,3 +1,10 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+registration:
+  path: /register
+  controller: App\Controller\RegistrationController:registerAction
+  methods: [POST]
+app_registration:
+  path: /registration
+  controller: App\Controller\RegistrationController:registerIndex
+app_login:
+  path: /
+  controller: App\Controller\LoginController:login

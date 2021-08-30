@@ -1,0 +1,7 @@
+fos_rest:
+  body_listener:
+    enabled: true
+  format_listener:
+    rules:
+      - { path: '^/register', priorities:[ json ], fallback_format: json, prefer_extension: false}
+      - { path: '^/', priorities:[ html, json ], fallback_format: json, prefer_extension: false}
