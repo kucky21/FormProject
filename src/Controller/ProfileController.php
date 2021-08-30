@@ -27,11 +27,9 @@ class ProfileController extends AbstractController
      */
     public function index(): Response
     {
-
         $user = $this->security->getUser();
-
-            $repository = $this->getDoctrine()->getRepository(User::class);
-            $users = $repository->findAll();
+        $repository = $this->getDoctrine()->getRepository(User::class);
+        $users = $repository->findAll();
 
         if($user !== null){
             $userName = $user->getName();

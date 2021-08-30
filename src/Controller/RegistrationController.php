@@ -62,7 +62,7 @@ class RegistrationController extends AbstractApiController
      * @param Request $request
      * @return Response
      */
-    function registerIndex(Request $request)
+    function registerIndex(Request $request) : Response
     {
         $user = new User();
 

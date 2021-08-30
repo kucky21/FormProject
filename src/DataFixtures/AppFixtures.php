@@ -16,7 +16,11 @@ class AppFixtures extends Fixture
         $this->encoder = $encoder;
     }
 
-    public function load(ObjectManager $manager)
+    /**
+     * @param ObjectManager $manager
+     * @return void
+     */
+    public function load(ObjectManager $manager) :void
     {
         $user = new User();
         $user->setEmail("admin@admin.cz");
